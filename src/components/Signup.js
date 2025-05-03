@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+const navigate = useNavigate();
 
 const Signup = () => {
     const [formData, setFormData] = useState({
@@ -18,8 +20,8 @@ const Signup = () => {
         e.preventDefault();
         // Handle sign-up logic (store in localStorage for now)
         localStorage.setItem('user', JSON.stringify(formData));
-        alert('Sign-up successful!');
-        window.location.href = '/Login'; // Redirect to login
+        navigate('/login');
+ // Redirect to login
     };
 
     return (
